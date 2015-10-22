@@ -3,6 +3,8 @@ import os
 from time import sleep
 import sys
 
+# rewrite the code to be easily scaled. 
+
 def waitMotion():
 
     wait = 0
@@ -43,7 +45,7 @@ while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
     screen.fill(black)
-    screen.blit(pic1, pic1rect)
+    screen.blit(pic7, pic7rect)
     pygame.display.flip()
     pygame.event.get()
     if pygame.mouse.get_pressed()[0]:
@@ -56,29 +58,38 @@ while 1:
         pygame.event.get()
         print xloc - pygame.mouse.get_pos()[0]
         sleep(0.01)
+        if xloc - pygame.mouse.get_pos()[0] >  0:
+            screen.blit(pic3, pic3rect)
+            pygame.display.flip() 
+
+        pygame.event.get()
         if xloc - pygame.mouse.get_pos()[0] <  -70 and xloc - pygame.mouse.get_pos()[0] >  -70*2:
-            screen.blit(pic2, pic2rect)
-            pygame.display.flip()       
+            screen.blit(pic7, pic7rect)
+            pygame.display.flip()
+
         pygame.event.get()
         sleep(0.01)
         if xloc - pygame.mouse.get_pos()[0] <  -70*2 and xloc - pygame.mouse.get_pos()[0] >  -70*3:
-            screen.blit(pic3, pic3rect)
-            pygame.display.flip()       
+            screen.blit(pic4, pic4rect)
+            pygame.display.flip() 
+
         pygame.event.get()
         sleep(0.01)
         print xloc - pygame.mouse.get_pos()[0]
         if xloc - pygame.mouse.get_pos()[0] <  -70*3 and xloc - pygame.mouse.get_pos()[0] >  -70*4:
-            screen.blit(pic4, pic4rect)
-            pygame.display.flip()       
+            screen.blit(pic5, pic5rect)
+            pygame.display.flip()     
+    
         pygame.event.get()
         sleep(0.01)
         print xloc - pygame.mouse.get_pos()[0]
         if xloc - pygame.mouse.get_pos()[0] <  -70*4 and xloc - pygame.mouse.get_pos()[0] >  -70*5:
-            screen.blit(pic5, pic5rect)
-            pygame.display.flip()
+            screen.blit(pic6, pic6rect)
+            pygame.display.flip()  
         pygame.event.get()
         sleep(0.01)
         print xloc - pygame.mouse.get_pos()[0]
+
         if xloc - pygame.mouse.get_pos()[0] <  -70*5:
-            screen.blit(pic6, pic6rect)
-            pygame.display.flip()
+            screen.blit(pic2, pic2rect)
+            pygame.display.flip()       
